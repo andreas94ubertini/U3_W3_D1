@@ -18,6 +18,9 @@ export class ProductService {
   getAll():Observable<any>{
     return this.risposta = this.http.get<any>(this.baseUrl)
   }
+  getFav():Product[]{
+    return this.favouriteList
+  }
   getData(product:Product):Product[]{
     this.shoppingCart.push(product)
     return this.shoppingCart

@@ -1,1 +1,15 @@
-<p>favourite works!</p>
+<div class="container">
+  <div class="row mt-3" *ngIf="favouriteList.length >= 1">
+    <div class="col-12"><h1>Lista dei preferiti</h1></div>
+    <app-favouriterow *ngFor="let prod of favouriteList"
+                      [productName]="prod.title"
+                      [product]="prod"
+                      [brand]="prod.brand"
+                      [price]="prod.price"
+                      (removed)="getData3($event)"
+
+    >
+    </app-favouriterow>
+
+  </div>
+</div>
